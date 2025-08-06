@@ -43,7 +43,7 @@ class Resnet(nn.Module):
         stem = self.stem(x)
         out = self.features(stem)
         out = self.avgpool(out)
-        out = out.view(-1)
+        out = out.view(out.size(0), -1)
         return out
     
 
