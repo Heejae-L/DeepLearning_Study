@@ -18,8 +18,8 @@ class Densenet(torch.nn.Module):
         block_list = []
         for num_layers in config:
             block_list.append(DensenetBlock(num_layers = num_layers,
-                                             int_channels = out_channels,
-                                             growth_rate = growth_rate))
+                                            in_channels = out_channels,
+                                            growth_rate = growth_rate))
             out_channels += growth_rate * num_layers
 
             if num_layers != config[-1]:
