@@ -29,7 +29,21 @@ class Densenet(torch.nn.Module):
 
         self.features = torch.nn.Sequential(*block_list)
 
-        self.classification = torch.nn.Sequential(
-            
+        self.classifer = torch.nn.Sequential(
+            torch.nn.AdaptiveAvgPool2d((1, 1)),
+            torch.nn.Conv2d(in_channels=out_channels, 
+                            out_channels=num_classes, 
+                            kernel_size=1, bias=True)
         )
+    
+    def forward(self, x):
+        stem = self.stem(x)
+        out = self.features(stem)
+        out = self.classifer(out)
+        out = torch.flatten(out, 1)
 
+        return out
+
+def DenseNet121(num_classes=1000):
+    config = (6,12,24,16)
+    return Densenet(growth_rate=32, theta=0.5, num_classes=num_classes, config=config)
