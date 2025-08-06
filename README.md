@@ -25,6 +25,7 @@
 ---
 
 ## 🗂️ 디렉토리 구조
+```
 DeepLearning_Study/
 │
 ├── model/
@@ -49,7 +50,7 @@ DeepLearning_Study/
 │
 ├── README.md
 └── requirements.txt
-
+```
 ---
 
 ## 📌 참고
