@@ -69,6 +69,18 @@ for epoch in range(epochs):
     train_acc = correct / len(train_loader.dataset)
     print(f"Epoch [{epoch+1}/{epochs}] Loss: {total_loss:.4f} | Train Acc: {train_acc:.4f}")
 
+    model.eval()
+    correct = 0
+
+    with torch.no_grad():
+        for x, y in test_loader:
+            x, y = x.to(device), y.to(device)
+            outputs = model(x)
+            _, preds = outputs.max(dim = 1)
+            correct += (preds == y).sum().item()
+    val_acc = correct / len(test_loader.dataset)
+    print(f"Validation Accuracy: {val_acc:.4f}")
+
 # 테스트
 model.eval()
 correct = 0
@@ -79,5 +91,5 @@ with torch.no_grad():
         outputs = model(x)
         _, preds = outputs.max(dim = 1)
         correct += (preds == y).sum().item()
-val_acc = correct / len(test_loader.dataset)
-print(f"Test Accuracy: {val_acc:.4f}")
+test_acc = correct / len(test_loader.dataset)
+print(f"Test Accuracy: {test_acc:.4f}")
