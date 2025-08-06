@@ -8,7 +8,7 @@ class TransitionLayer(torch.nn.Module):
             torch.nn.BatchNorm2d(in_channels),
             torch.nn.ReLU(inplace=True),
             torch.nn.Conv2d(in_channels = in_channels, out_channels = out_channels, kernel_size=1, bias=False),
-            torch.nn.AdaptiveAvgPool2d(kernel_size=2, stride=2)
+            torch.nn.AvgPool2d(kernel_size=2, stride=2)
         )
     def forward(self, x):
         return self.transition(x)
