@@ -1,7 +1,7 @@
 import torch
 
 from block.densenet_block import DensenetBlock
-from layer.transition_layer import TransitionLayer
+from block.transition_layer import TransitionLayer
 
 class Densenet(torch.nn.Module):
     def __init__(self, growth_rate, theta, num_classes=1000, config=()):
