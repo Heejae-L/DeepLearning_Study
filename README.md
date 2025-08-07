@@ -13,6 +13,7 @@
 | ✅ ResNet (BasicBlock) | 2025.08.04 | [Deep Residual Learning for Image Recognition (2015)](https://arxiv.org/abs/1512.03385) |
 | ✅ DenseNet (with transition layer) | 2025.08.06 | [Densely Connected Convolutional Networks (2016)](https://arxiv.org/abs/1608.06993) |
 | ✅ Xception (with separable conv) | 2025.08.07 | [Xception: Deep Learning with Depthwise Separable Convolutions (2017)](https://arxiv.org/abs/1610.02357) |
+| ✅ MobileNet (with depthwise separable conv) | 2025.08.07 | [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications (2017)](https://arxiv.org/abs/1704.04861) |
 
 ---
 
@@ -33,6 +34,7 @@ DeepLearning_Study/
 │ ├── vgg.py
 │ ├── resnet.py
 │ ├── densenet.py
+│ ├── mobilenet.py
 │ └── xception/
 │   ├── entry_flow.py
 │   ├── middle_flow.py
@@ -45,12 +47,14 @@ DeepLearning_Study/
 │ ├── transition_layer.py
 │ ├── dense_layer.py
 │ ├── separable_conv.py
-│ └── residual_separable_block.py
+│ ├── residual_separable_block.py
+│ └── mobilenet_depthwise_separable_conv.py
 │
 ├── train/
 │ ├── resnet18_train.py
 │ ├── vgg_train.py
-│ └── xception_train.py
+│ ├── xception_train.py
+│ └── mobilenet_train.py
 │
 ├── data/
 │ └── (데이터는 .gitignore 처리)
@@ -72,5 +76,4 @@ DeepLearning_Study/
 ## 🙋‍♀️ Author
 
 - 이름: 이희재  
-- 학부 전공: AI · 소프트웨어학부 (인공지능 전공)  
 - GitHub: [@Heejae-L](https://github.com/Heejae-L)
