@@ -42,12 +42,10 @@ DeepLearning_Study/
 ├── block/
 │ ├── resnet_block.py
 │ ├── densenet_block.py
+│ ├── transition_layer.py
+│ ├── dense_layer.py
 │ ├── separable_conv.py
 │ └── residual_separable_block.py
-│
-├── layer/
-│ ├── transition_layer.py
-│ └── dense_layer.py
 │
 ├── train/
 │ ├── resnet18_train.py
