@@ -1,6 +1,6 @@
 import torch
 
-from layer.dense_layer import DenseLayer
+from block.dense_layer import DenseLayer
 
 class DensenetBlock(torch.nn.Module):
     def __init__(self, num_layers, in_channels, growth_rate):
