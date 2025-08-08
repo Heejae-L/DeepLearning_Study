@@ -16,7 +16,7 @@ class ShuffleNetUnit(torch.nn.Module):
         self.bn1 = torch.nn.BatchNorm2d(bottle_neck)
         self.relu = torch.nn.ReLU(inplace=False)
 
-        self.dwconv = torch.nn.Conv2d(in_channels=bottle_neck, out_channels=bottle_neck,kernel_size=3, stride=stride, padding=1, bias=False)
+        self.dwconv = torch.nn.Conv2d(in_channels=bottle_neck, out_channels=bottle_neck,kernel_size=3, stride=stride, padding=1, groups = bottle_neck, bias=False)
         self.bn2 = torch.nn.BatchNorm2d(bottle_neck)
 
         self.gconv2 = torch.nn.Conv2d(in_channels=bottle_neck, out_channels=conv_out_channels, kernel_size=1,stride=1, bias=False)
