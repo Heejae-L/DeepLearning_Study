@@ -14,6 +14,7 @@
 | ✅ DenseNet (with transition layer) | 2025.08.06 | [Densely Connected Convolutional Networks (2016)](https://arxiv.org/abs/1608.06993) |
 | ✅ Xception (with separable conv) | 2025.08.07 | [Xception: Deep Learning with Depthwise Separable Convolutions (2017)](https://arxiv.org/abs/1610.02357) |
 | ✅ MobileNet (with depthwise separable conv) | 2025.08.07 | [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications (2017)](https://arxiv.org/abs/1704.04861) |
+| ✅ ShuffleNet (with channel shuffling) | 2025.08.08 | [ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices (2017)](https://arxiv.org/abs/1707.01083) |
 
 ---
 
@@ -35,6 +36,7 @@ DeepLearning_Study/
 │ ├── resnet.py
 │ ├── densenet.py
 │ ├── mobilenet.py
+│ ├── shufflenet.py
 │ └── xception/
 │   ├── entry_flow.py
 │   ├── middle_flow.py
@@ -48,13 +50,15 @@ DeepLearning_Study/
 │ ├── dense_layer.py
 │ ├── separable_conv.py
 │ ├── residual_separable_block.py
-│ └── mobilenet_depthwise_separable_conv.py
+│ ├── mobilenet_depthwise_separable_conv.py
+│ └── shufflenet_block.py
 │
 ├── train/
 │ ├── resnet18_train.py
 │ ├── vgg_train.py
 │ ├── xception_train.py
-│ └── mobilenet_train.py
+│ ├── mobilenet_train.py
+│ └── shuffle_train.py
 │
 ├── data/
 │ └── (데이터는 .gitignore 처리)
