@@ -19,8 +19,9 @@ class ResNeXtBlock(torch.nn.Module):
 
             torch.nn.Conv2d(in_channels=bottlenect_channel, out_channels=out_channels, kernel_size=1, bias=False),
             torch.nn.BatchNorm2d(out_channels),
-            torch.nn.ReLU(inplace=True)
         )
+
+        self.relu = torch.nn.ReLU(inplace=True)
         
 
         if stride>1 or in_channels != out_channels:
@@ -35,4 +36,5 @@ class ResNeXtBlock(torch.nn.Module):
         identity = x if self.shortcut is None else self.shortcut(x)
 
         out = self.block(x)
-        return out + identity
+        out = self.relu(out + identity)
+        return out
