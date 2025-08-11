@@ -15,7 +15,7 @@
 | ✅ Xception (with separable conv) | 2025.08.07 | [Xception: Deep Learning with Depthwise Separable Convolutions (2017)](https://arxiv.org/abs/1610.02357) |
 | ✅ MobileNet (with depthwise separable conv) | 2025.08.07 | [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications (2017)](https://arxiv.org/abs/1704.04861) |
 | ✅ ShuffleNet (with channel shuffling) | 2025.08.08 | [ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices (2017)](https://arxiv.org/abs/1707.01083) |
-
+| ✅ ResNeXt (with cardinality) | 2025.08.11 | [Aggregated Residual Transformations for Deep Neural Networks (2017)](https://arxiv.org/abs/1611.05431) |
 ---
 
 ## 🛠️ 구현 시 특징
