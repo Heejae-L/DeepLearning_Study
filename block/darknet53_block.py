@@ -1,5 +1,7 @@
 import torch
 
+from block.darknet_residual_block import DarknetResidualBlock
+
 class DarknetBlock(torch.nn.Module):
     def __init__(self, in_channels):
         super().__init__()
@@ -13,6 +15,8 @@ class DarknetBlock(torch.nn.Module):
             torch.nn.BatchNorm2d(in_channels),
             torch.nn.LeakyReLU(0.1, inplace=True),
         )
+
+        self.residual = DarknetResidualBlock(in_channels=in_channels, out_channels=in_channels)
     
     def forward(self, x):
         out = self.features(x)
