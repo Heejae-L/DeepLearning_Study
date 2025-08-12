@@ -8,6 +8,7 @@ class SERenetBlock(torch.nn.Module):
         self.residual = torch.nn.Sequential(
             torch.nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=3, stride=stride, padding=1, bias=False),
             torch.nn.BatchNorm2d(out_channels),
+            torch.nn.ReLU(inplace=True),
             torch.nn.Conv2d(in_channels=out_channels, out_channels=out_channels, kernel_size=3, stride=1, padding=1, bias=False),
             torch.nn.BatchNorm2d(out_channels)
         )
@@ -29,5 +30,6 @@ class SERenetBlock(torch.nn.Module):
         out = self.residual(x)
         out = out * self.SE(out)
         out = out + identity
+        out = self.relu(out)
 
         return out
