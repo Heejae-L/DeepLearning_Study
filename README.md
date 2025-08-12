@@ -16,6 +16,7 @@
 | ✅ MobileNet (with depthwise separable conv) | 2025.08.07 | [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications (2017)](https://arxiv.org/abs/1704.04861) |
 | ✅ ShuffleNet (with channel shuffling) | 2025.08.08 | [ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices (2017)](https://arxiv.org/abs/1707.01083) |
 | ✅ ResNeXt (with cardinality) | 2025.08.11 | [Aggregated Residual Transformations for Deep Neural Networks (2017)](https://arxiv.org/abs/1611.05431) |
+| ✅ Squeeze-and-Excitation (with SE block) | 2025.08.11 | [Squeeze-and-Excitation Networks (2018)](https://arxiv.org/abs/1709.01507) |
 ---
 
 ## 🛠️ 구현 시 특징
