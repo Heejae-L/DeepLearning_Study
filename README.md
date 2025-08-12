@@ -17,7 +17,7 @@
 | ✅ ShuffleNet (with channel shuffling) | 2025.08.08 | [ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mobile Devices (2017)](https://arxiv.org/abs/1707.01083) |
 | ✅ ResNeXt (with cardinality) | 2025.08.11 | [Aggregated Residual Transformations for Deep Neural Networks (2017)](https://arxiv.org/abs/1611.05431) |
 | ✅ Squeeze-and-Excitation (with SE block) | 2025.08.11 | [Squeeze-and-Excitation Networks (2018)](https://arxiv.org/abs/1709.01507) |
-| ✅ MobileNetV2 (with invert residual) | 2025.08.11 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks(2018)](https://arxiv.org/abs/1709.01507) |
+| ✅ MobileNetV2 (with invert residual) | 2025.08.11 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks (2018)](https://arxiv.org/abs/1801.04381) |
 ---
 
 ## 🛠️ 구현 시 특징
