@@ -19,6 +19,7 @@
 | ✅ Squeeze-and-Excitation (with SE block) | 2025.08.11 | [Squeeze-and-Excitation Networks (2018)](https://arxiv.org/abs/1709.01507) |
 | ✅ MobileNetV2 (with invert residual) | 2025.08.12 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks (2018)](https://arxiv.org/abs/1801.04381) |
 | ✅ DarkNet53 | 2025.08.12 | [YOLOv3: An Incremental Improvement (2018)](https://arxiv.org/abs/1804.02767) |
+| ✅ GhostNet | 2025.08.13 | [GhostNet: More Features from Cheap Operations (2019)](https://arxiv.org/abs/1911.11907) |
 ---
 
 ## 🛠️ 구현 시 특징
