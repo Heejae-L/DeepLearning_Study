@@ -1,4 +1,4 @@
-# 🧠 DeepLearning_Study
+# 🧠 DeepLearning Study
 
 딥러닝 논문을 직접 읽고, 대표적인 CNN 아키텍처들을 PyTorch로 **스크래치부터 직접 구현**한 저장소입니다.  
 학습용 코드로, 각 모델은 논문 기반으로 작성되었고 주요 구성 요소들을 클래스 단위로 분리하였습니다.
@@ -20,59 +20,19 @@
 | ✅ MobileNetV2 (with invert residual) | 2025.08.12 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks (2018)](https://arxiv.org/abs/1801.04381) |
 | ✅ DarkNet53 | 2025.08.12 | [YOLOv3: An Incremental Improvement (2018)](https://arxiv.org/abs/1804.02767) |
 | ✅ GhostNet | 2025.08.13 | [GhostNet: More Features from Cheap Operations (2019)](https://arxiv.org/abs/1911.11907) |
-| ✅ CSPNet | 2025.08.14 | [CSPNet: A New Backbone that can Enhance Learning Capability of CNN (2019)](https://arxiv.org/abs/1911.11929) |
+| ✅ CSPNet (with partial dense block)| 2025.08.14 | [CSPNet: A New Backbone that can Enhance Learning Capability of CNN (2019)](https://arxiv.org/abs/1911.11929) |
+| ✅ EfficientPNet (wit MBconv) | 2025.08.18 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks (2019)](https://arxiv.org/abs/1905.11946) |
 ---
 
 ## 🛠️ 구현 시 특징
 
 - 모든 모델은 PyTorch의 기본 모듈만 사용
-- 공통 구조를 `Block`, `Layer`, `Model` 단위로 모듈화
+- 공통 구조를 `Block`, `Model` 단위로 모듈화
 - CIFAR-10 기반으로 훈련 가능하도록 설계
 - 학습 및 테스트는 `train.py`로 분리
 
 ---
 
-## 🗂️ 디렉토리 구조
-```
-DeepLearning_Study/
-│
-├── model/
-│ ├── vgg.py
-│ ├── resnet.py
-│ ├── densenet.py
-│ ├── mobilenet.py
-│ ├── shufflenet.py
-│ └── xception/
-│   ├── entry_flow.py
-│   ├── middle_flow.py
-│   ├── exit_flow.py
-│   └── xception.py
-│ 
-├── block/
-│ ├── resnet_block.py
-│ ├── densenet_block.py
-│ ├── transition_layer.py
-│ ├── dense_layer.py
-│ ├── separable_conv.py
-│ ├── residual_separable_block.py
-│ ├── mobilenet_depthwise_separable_conv.py
-│ └── shufflenet_block.py
-│
-├── train/
-│ ├── resnet18_train.py
-│ ├── vgg_train.py
-│ ├── xception_train.py
-│ ├── mobilenet_train.py
-│ └── shuffle_train.py
-│
-├── data/
-│ └── (데이터는 .gitignore 처리)
-│
-├── README.md
-└── requirements.txt
-```
-
----
 
 ## 📌 참고
 
