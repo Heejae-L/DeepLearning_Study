@@ -5,14 +5,14 @@ class EfficientNet(torch.nn.Module):
     def __init__(self, num_classes=1000):
         super().__init__()
         self.stem = torch.nn.Sequential(
-            torch.nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3, stride=1, padding=1, bias=False),
+            torch.nn.Conv2d(in_channels=3, out_channels=32, kernel_size=3, stride=2, padding=1, bias=False),
             torch.nn.BatchNorm2d(32),
             torch.nn.SiLU(inplace=True)
         )
 
-        self.stage2 = MBConvBlock(32,16,stride=2,kernel_size=3,expand_ratio=1)
+        self.stage2 = MBConvBlock(32,16,stride=1,kernel_size=3,expand_ratio=1)
         self.stage3 = torch.nn.Sequential(
-            MBConvBlock(16,24,stride=1,kernel_size=3),
+            MBConvBlock(16,24,kernel_size=3, stride=2),
             MBConvBlock(24,24,kernel_size=3, stride=1)
         )
         self.stage4 = torch.nn.Sequential(
@@ -25,18 +25,18 @@ class EfficientNet(torch.nn.Module):
             MBConvBlock(80,80,kernel_size=3, stride=1)
         )
         self.stage6 = torch.nn.Sequential(
-            MBConvBlock(80,112, kernel_size=5, stride=2),
+            MBConvBlock(80,112, kernel_size=5, stride=1),
             MBConvBlock(112,112,kernel_size=5, stride=1),
             MBConvBlock(112,112,kernel_size=5, stride=1)
         )
         self.stage7 = torch.nn.Sequential(
-            MBConvBlock(112,192, kernel_size=5, stride=1),
+            MBConvBlock(112,192, kernel_size=5, stride=2),
             MBConvBlock(192,192,kernel_size=5, stride=1),
             MBConvBlock(192,192,kernel_size=5, stride=1),
             MBConvBlock(192,192,kernel_size=5, stride=1)
         )
         self.stage8 = torch.nn.Sequential(
-            MBConvBlock(192, 320, kernel_size=3, stride=2)
+            MBConvBlock(192, 320, kernel_size=3, stride=1)
         )
         self.classifier = torch.nn.Sequential(
             torch.nn.Conv2d(320, 1280, kernel_size=1, stride=1),

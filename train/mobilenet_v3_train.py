@@ -5,7 +5,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from model.efficientnet import EfficientNet
+from model.mobilenet_v3 import MobileNetV3
 
 # 하이퍼파라미터
 batch_size = 20
@@ -30,7 +30,7 @@ train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=100, shuffle=False)
 
 # 모델 생성
-model = EfficientNet(num_classes=10).to(device)
+model = MobileNetV3(num_classes=10).to(device)
 
 # 손실함수와 옵티마이저
 criterion = nn.CrossEntropyLoss()

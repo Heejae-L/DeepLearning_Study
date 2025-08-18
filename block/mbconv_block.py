@@ -13,8 +13,8 @@ class SEBlock(torch.nn.Module):
         )
 
     def forward(self, x):
-        s = self.squeeze(x)        
-        s = self.excitation(s)     
+        s = self.squeeze(x)        # (N,C,1,1)
+        s = self.excitation(s)     # (N,C,1,1)
         return x * s               
 
     
