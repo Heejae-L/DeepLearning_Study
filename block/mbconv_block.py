@@ -21,18 +21,15 @@ class SEBlock(torch.nn.Module):
 class drop(torch.nn.Module):
     def __init__(self, p: float):
         super().__init__()
-        self.p = float(p)
-
+        self.p = 1.0 - float(p)
     def forward(self, x):
-        if not self.training or self.p == 0.0:
+        if not self.training or self.p == 1.0:
             return x
-        keep = 1.0 - self.p
-        # per-sample mask, broadcast to [N,1,1,1]
-        mask = torch.empty(x.shape[0], 1, 1, 1, device=x.device).bernoulli_(keep)
-        return x / keep * mask
+        mask = torch.empty(x.shape[0], 1, 1, 1, device=x.device).bernoulli_(self.p)
+        return x * mask
 
 class MBConvBlock(torch.nn.Module):
-    def __init__(self, in_channels, out_channels, stride=1, expand_ratio=6, kernel_size = 3, se_ratio = 0.25, drop_ratio = 0.0):
+    def __init__(self, in_channels, out_channels, stride=1, expand_ratio=6, kernel_size = 3, se_ratio = 0.25, drop_ratio = 0.2):
         super().__init__()
         self.in_channels = in_channels
         self.out_channels = out_channels
@@ -50,7 +47,7 @@ class MBConvBlock(torch.nn.Module):
             ]
         
         padding = kernel_size//2
-        layers+=[
+        layers += [
             torch.nn.Conv2d(mid_channels, mid_channels, kernel_size=kernel_size, stride=stride, padding=padding, groups=mid_channels, bias=False),
             torch.nn.BatchNorm2d(mid_channels),
             torch.nn.SiLU(inplace=True)
