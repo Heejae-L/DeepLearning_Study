@@ -38,9 +38,9 @@ class NFBlock(torch.nn.Module):
     def __init__(
         self,
         in_channels,
+        mid_channels,
         out_channels,
         stride=1,
-        bottleneck_ratio=0.5,
         alpha=0.2,
         drop=0.0,
         use_se=True,
@@ -48,7 +48,7 @@ class NFBlock(torch.nn.Module):
         eps=1e-5,
     ):
         super().__init__()
-        mid_channels = max(32, int(out_channels * bottleneck_ratio))
+        mid_channels = mid_channels
         groups = max(1, mid_channels // 128)
 
         self.alpha = alpha

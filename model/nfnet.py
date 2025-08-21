@@ -13,27 +13,24 @@ class NFNet(torch.nn.Module):
             ScaledWSConv2d(64, 128, kernel_size=3)
         )
 
-        self.stage1 = NFBlock(128, 256)
+        self.stage1 = NFBlock(128, 128, 256)
 
         self.stage2 = torch.nn.Sequential(
-            NFBlock(256, 512),
-            NFBlock(512, 768)
+            NFBlock(256, 256, 512),
+            NFBlock(512, 256, 512)
         )
 
         self.stage3 = torch.nn.Sequential(
-            NFBlock(768, 1536),
-            NFBlock(1536, 1536),
-            NFBlock(1536, 1536),
-            NFBlock(1536, 1536),
-            NFBlock(1536, 1536),
-            NFBlock(1536, 1536),
+            NFBlock(512, 768, 1536),
+            NFBlock(1536, 768, 1536),
+            NFBlock(1536, 768, 1536),
+            NFBlock(1536, 768, 1536),
+            NFBlock(1536, 768, 1536),
+            NFBlock(1536, 768, 1536),
         )
 
         self.stage4 = torch.nn.Sequential(
-            NFBlock(768, 1536),
-            NFBlock(1536, 1536),
-            NFBlock(1536, 1536),
-            NFBlock(1536, 1536),
-            NFBlock(1536, 1536),
-            NFBlock(1536, 1536),
+            NFBlock(1536, 768, 1536),
+            NFBlock(1536, 768, 1536),
+            NFBlock(1536, 768, 1536),
         )
