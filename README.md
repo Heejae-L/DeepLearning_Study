@@ -23,6 +23,7 @@
 | ✅ CSPNet (with partial dense block)| 2025.08.14 | [CSPNet: A New Backbone that can Enhance Learning Capability of CNN (2019)](https://arxiv.org/abs/1911.11929) |
 | ✅ EfficientPNet (wit MBconv) | 2025.08.18 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks (2019)](https://arxiv.org/abs/1905.11946) |
 | ✅ MobileNetV3 | 2025.08.18 | [Searching for MobileNetV3 (2019)](https://arxiv.org/abs/1905.02244) |
+| ✅ NFNet (with scaled weight standardization conv)| 2025.08.21 | [High-Performance Large-Scale Image Recognition Without Normalization (2021)](https://arxiv.org/abs/2102.06171) |
 ---
 
 ## 🛠️ 구현 시 특징
